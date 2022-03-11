@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "me.hotpocket.testingmod.mixin",
+  "compatibilityLevel": "JAVA_16",
+  "mixins": ["TestingModMixin", "TestingModMixin2"],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "testingmod",
+  "version": "${version}",
+  "name": "TestingMod",
+  "description": "Epic Mod!",
+  "authors": [
+    "hotpocket184"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/honeycomb.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "me.hotpocket.testingmod.client.TestingModClient"
+    ],
+    "main": [
+      "me.hotpocket.testingmod.TestingMod"
+    ]
+  },
+  "mixins": [
+    "TestingMod.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.13.3",
+    "fabric": "*",
+    "minecraft": "1.17.1"
+  }
+}
