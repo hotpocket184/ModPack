@@ -1,11 +1,8 @@
 package me.hotpocket.testingmod.mixin;
 
 import me.hotpocket.testingmod.client.TestingModClient;
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerEntity;
-import net.minecraft.fluid.WaterFluid;
 import net.minecraft.util.math.Vec3d;
-import net.minecraft.world.GameMode;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -25,11 +22,9 @@ public abstract class TestingModMixin2 {
                     || self.forwardSpeed == 0 && self.sidewaysSpeed == 0)
                 return;
 
-            // activate sprint if walking forward
             if (self.forwardSpeed > 0 && !self.horizontalCollision)
                 self.setSprinting(true);
 
-            // activate mini jump if on ground
             if (!self.isOnGround())
                 return;
 
@@ -39,9 +34,6 @@ public abstract class TestingModMixin2 {
             v = self.getVelocity();
             double currentSpeed = Math.sqrt(Math.pow(v.x, 2) + Math.pow(v.z, 2));
 
-            // limit speed to highest value that works on NoCheat+ version
-            // 3.13.0-BETA-sMD5NET-b878
-            // UPDATE: Patched in NoCheat+ version 3.13.2-SNAPSHOT-sMD5NET-b888
             double maxSpeed = 0.66F;
 
             if (currentSpeed > maxSpeed)
@@ -50,5 +42,3 @@ public abstract class TestingModMixin2 {
         }
     }
 }
-
-//langoria
